@@ -43,6 +43,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
            name: reports-generated
-           path: /home/runner/work/payouts_api/payouts_api/target/surefire-reports
+           path: /home/runner/work/payouts_api/payouts_api/target
 
       
