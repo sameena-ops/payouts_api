@@ -20,22 +20,23 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Step1 Checkout the code from master branch
+      - name: Step 1 Checkout the code from master branch
         uses: actions/checkout@v3
       
-      - name: Step2 run maven tests
+      - name: Step 2 run maven tests
         run: mvn test
         
       - name: Step3 Check the files in target folder
         run: |
-          cd target
-          ls -a
+              cd target
+              ls -a
           
       - name: Step4 Use upload artifacts github actions
         uses: actions/upload-artifact@v2
         with:
-         name: reports-generated
-         path: downloads
+           name: reports-generated
+           path: downloads
 
       
