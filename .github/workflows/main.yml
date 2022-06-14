@@ -28,7 +28,8 @@ jobs:
       - name: Step 2 run maven tests
         run: mvn clean test
         
-      - name: Step 3 run maven tests
+      - name: Step 3 Generate html report
+        if: always()
         run: mvn -Dmaven.test.skip=true site
         
       - name: Step 4 Check the files in target folder
