@@ -26,19 +26,15 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Step 2 run maven tests
-        run: mvn site
+        run: mvn test
         
       - name: Step 3 Check the files in target folder
         if: always()
         run: |
               cd target
               ls -a
-              
-      - name: Step 4 create a reports folder
-        if: always()
-        run: mkdir reports
-          
-      - name: Step 5 Use upload artifacts github actions
+                    
+      - name: Step 4 Use upload artifacts github actions
         if: always()
         uses: actions/upload-artifact@v2
         with:
