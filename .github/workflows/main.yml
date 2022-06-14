@@ -28,17 +28,21 @@ jobs:
       - name: Step 2 run maven tests
         run: mvn test
         
-      - name: Step3 Check the files in target folder
+      - name: Step 3 Check the files in target folder
         if: always()
         run: |
               cd target
               ls -a
+              
+      - name: Step 4 create a reports folder
+        if: always()
+        run: mkdir reports
           
-      - name: Step4 Use upload artifacts github actions
+      - name: Step 5 Use upload artifacts github actions
         if: always()
         uses: actions/upload-artifact@v2
         with:
            name: reports-generated
-           path: downloads
+           path: reports
 
       
