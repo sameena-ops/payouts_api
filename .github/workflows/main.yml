@@ -29,11 +29,13 @@ jobs:
         run: mvn test
         
       - name: Step3 Check the files in target folder
+        if: always()
         run: |
               cd target
               ls -a
           
       - name: Step4 Use upload artifacts github actions
+        if: always()
         uses: actions/upload-artifact@v2
         with:
            name: reports-generated
